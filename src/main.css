@@ -1,0 +1,20 @@
+.main{
+    width:3000px;
+}
+.topbtn{
+    display: flex;
+    width:50%;
+    
+}
+.btn1 {
+    border: none;
+    cursor: pointer;
+}
+.btn2{
+    border:none;
+    cursor: pointer;
+}
+.btn3{
+    border: none;
+    cursor: pointer;
+}
