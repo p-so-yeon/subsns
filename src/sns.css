@@ -1,0 +1,62 @@
+.postarea {
+  width: 430px;
+  height: 50%;
+  position: relative;
+  border: none;
+  outline: none;
+  scrollbar-width: none;
+  resize: none;
+  overflow: auto;
+}
+.postarea::placeholder {
+  color: rgb(172, 172, 172);
+  white-space: pre-wrap;
+}
+
+.postbox {
+  display: flex;
+  height: 35px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+  border: solid gray;
+  resize: both;
+  border-radius: 60px;
+}
+.submit {
+  display: flex;
+  justify-content: center;
+}
+.postbtn {
+  background: none;
+  border: none;
+}
+.postbtn:hover {
+  cursor: pointer;
+  color: rgb(25, 0, 255);
+}
+.timeline {
+  width: 500px;
+  white-space: pre-line;
+}
+.timelinebox {
+  border: solid 2px gray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  white-space: pre-line;
+  position: relative;
+}
+.userprofileimg {
+  border: solid;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+.posttime {
+  right: 0;
+}
+.snspost {
+  margin-top: 20px;
+}

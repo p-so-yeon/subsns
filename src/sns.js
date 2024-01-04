@@ -1,12 +1,25 @@
 import { initializeApp } from "firebase/app";
-import { addDoc, collection } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  query,
+  orderBy,
+  getDocs,
+} from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
-import { useState } from "react";
+import { getStorage, ref } from "firebase/storage";
+import { useEffect, useState } from "react";
+import { IoIosSend } from "react-icons/io";
 import { auth, db } from "./firebase";
+import { FiLoader } from "react-icons/fi";
+import Line from "./line";
+import Nav2 from "./header2";
+import "./sns.css";
 const Sns = () => {
   const [isLoading, setLoading] = useState(false);
   const [post, setpost] = useState("");
+  const [file, setfile] = useState([]);
+  const [tweets, setTweet] = useState([]); //탐라 불러오기
   const onChange = (e) => {
     setpost(e.target.value);
   };
@@ -36,7 +49,7 @@ const Sns = () => {
       setLoading(true);
       await addDoc(collection(db, "subsns"), {
         post,
-        createdAt: Date.now(),
+        createdAt: new Date(),
         username: user.displayName || "익명",
         userId: user.uid,
       }); //어떤 컬렉션에 다큐먼트를 정하고 싶은지
@@ -46,19 +59,58 @@ const Sns = () => {
       setLoading(false);
     }
   };
+  const fetchsns = async () => {
+    const snsquery = query(
+      collection(db, "subsns"),
+      orderBy("createdAt", "desc")
+    );
+    const snapshot = await getDocs(snsquery); //getdoc 은 스냅샷을 리턴함
+    const data = snapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+    console.log(data);
+    setTweet(data);
 
+    return data;
+  };
+  useEffect(() => {
+    fetchsns();
+  }, []);
+  console.log(tweets.createdAt instanceof Date);
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <textarea
-          rows={5}
-          maxLength={180}
-          onChange={onChange}
-          value={post}
-          placeholder="What is happening?!"
-        />
-        <input type="submit" value={isLoading ? "Posting..." : "Post Tweet"} />
+      <Nav2></Nav2>
+      <Line></Line>
+      <form onSubmit={onSubmit} className="submit">
+        {" "}
+        <div className="postbox">
+          {" "}
+          <textarea
+            required
+            className="postarea"
+            rows={5}
+            maxLength={180}
+            onChange={onChange}
+            value={post}
+            placeholder="지하철에서 무슨일이 일어나고 있나요?"
+          />{" "}
+          <button type="submit" className="postbtn">
+            {isLoading ? <FiLoader size="25" /> : <IoIosSend size="25" />}
+          </button>
+        </div>{" "}
       </form>
+      <div className="snspost">
+        {tweets.map((data) => (
+          <div className="timelinebox">
+            <div className="posttime"> {data.createdAt.seconds}</div>{" "}
+            <div key={data.id} className="timeline">
+              {data.post}
+            </div>
+            <div></div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
