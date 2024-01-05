@@ -20,6 +20,8 @@ import { getAnalytics } from "firebase/analytics";
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
+// Initialize Firebase
+
 const firebaseConfig = {
   apiKey: "AIzaSyDMh0wjrfapZxMYIF5ScHWrRF5xH8BAHtw",
   authDomain: "subsns-9305e.firebaseapp.com",
@@ -29,8 +31,6 @@ const firebaseConfig = {
   appId: "1:255762467710:web:f469b9eb9bfdade874412f",
   measurementId: "G-X9YBYH0K27",
 };
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 console.log(app);
@@ -97,7 +97,7 @@ export default function SignUp() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign up
+              회원가입
             </Typography>
             <Box
               component="form"
@@ -127,14 +127,8 @@ export default function SignUp() {
                     autoComplete="new-password"
                   />
                 </Grid>
-                <Grid item xs={12}>
-                  <FormControlLabel
-                    control={
-                      <Checkbox value="allowExtraEmails" color="primary" />
-                    }
-                    label="I want to receive inspiration, marketing promotions and updates via email."
-                  />
-                </Grid>
+
+                <Grid item xs={12}></Grid>
               </Grid>
               <Button
                 type="submit"
@@ -142,12 +136,12 @@ export default function SignUp() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign Up
+                회원가입
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
                   <Link href="#" variant="body2">
-                    Already have an account? Sign in
+                    이미 계정이 있으신가요?
                   </Link>
                 </Grid>
               </Grid>

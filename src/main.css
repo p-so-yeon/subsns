@@ -1,20 +1,18 @@
-.main{
-    width:3000px;
+.main {
+  width: 3000px;
 }
-.topbtn{
-    display: flex;
-    width:50%;
-    
+.topbtn {
+  display: flex;
 }
 .btn1 {
-    border: none;
-    cursor: pointer;
+  border: none;
+  cursor: pointer;
 }
-.btn2{
-    border:none;
-    cursor: pointer;
+.btn2 {
+  border: none;
+  cursor: pointer;
 }
-.btn3{
-    border: none;
-    cursor: pointer;
+.btn3 {
+  border: none;
+  cursor: pointer;
 }

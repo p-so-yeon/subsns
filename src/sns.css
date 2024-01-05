@@ -1,5 +1,5 @@
 .postarea {
-  width: 430px;
+  width: 400px;
   height: 50%;
   position: relative;
   border: none;
@@ -7,6 +7,7 @@
   scrollbar-width: none;
   resize: none;
   overflow: auto;
+  margin-left: 5px;
 }
 .postarea::placeholder {
   color: rgb(172, 172, 172);
@@ -19,7 +20,7 @@
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  width: 480px;
+  width: 400px;
   border: solid gray;
   resize: both;
   border-radius: 60px;
@@ -37,8 +38,10 @@
   color: rgb(25, 0, 255);
 }
 .timeline {
-  width: 500px;
+  width: 444px;
   white-space: pre-line;
+  margin-left: 10px;
+  padding-bottom: 5px;
 }
 .timelinebox {
   border: solid 2px gray;
@@ -56,7 +59,30 @@
 }
 .posttime {
   right: 0;
+  color: gray;
+  font-size: 8px;
+  position: absolute;
+  margin-right: 8px;
 }
 .snspost {
   margin-top: 20px;
+}
+.profileimg {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.userinfo {
+  display: flex;
+  height: 33px;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+  color: gray;
+  font-size: 10px;
+}
+.firstline {
+  display: flex;
+  height: 33px;
+  align-items: center;
 }
