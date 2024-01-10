@@ -122,11 +122,14 @@ const Sns = () => {
               <div className="userinfo">
                 <img src={rabbit} className="profileimg"></img>
                 <div>{data.userId}</div>
-              </div>
+              </div>{" "}
+              <div className="divline"></div>
               <div className="posttime"> {data.createdAt.seconds}</div>{" "}
             </div>
-            <div key={data.id} className="timeline">
-              {data.post}
+            <div className="timelineinput">
+              <div key={data.id} className="timeline">
+                {data.post}
+              </div>
             </div>
             <div></div>
           </div>

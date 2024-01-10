@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bagel+Fat+One&family=Black+Han+Sans&family=Do+Hyeon&family=Gasoek+One&family=Nanum+Gothic:wght@700&family=Noto+Sans+KR:wght@200;300;400&family=Noto+Serif:ital,wght@1,900&display=swap");
 .App {
   text-align: center;
 }
 body {
-  font-family: sans-serif;
+  font-family: "Noto Sans KR";
   font-size: smaller;
   width: auto;
   display: flex;

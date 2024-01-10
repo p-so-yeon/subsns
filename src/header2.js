@@ -16,6 +16,9 @@ const Nav2 = () => {
   const Movebill = () => {
     navigate("/login");
   };
+  const Movereport = () => {
+    navigate("/report");
+  };
   return (
     <div>
       <div className="nav">
@@ -27,7 +30,9 @@ const Nav2 = () => {
             <button className="btn2" onClick={Movebill}>
               실시간위치
             </button>
-            <button className="btn3">신고📢</button>
+            <button className="btn3" onClick={Movereport}>
+              신고
+            </button>
           </div>
           <button className="menu" onClick={toggleMenu}>
             {" "}
