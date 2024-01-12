@@ -28,9 +28,7 @@
   box-shadow: 0px 2px 3px rgb(177, 177, 177);
   cursor: pointer;
 }
-.hot_:hover {
-  background-color: rgb(192, 209, 255);
-}
+
 .hot {
   background: none;
   border: none;
@@ -47,13 +45,17 @@
   box-shadow: 0px 2px 3px rgb(177, 177, 177);
   cursor: pointer;
 }
-.cold_:hover {
-  background-color: rgb(192, 209, 255);
+.cold:hover {
+  font-weight: bolder;
 }
+
 .cold {
   background: none;
   border: none;
   cursor: pointer;
+}
+.hot:hover {
+  font-weight: bolder;
 }
 .billon_ {
   height: 30px;
@@ -67,12 +69,14 @@
   box-shadow: 0px 2px 3px rgb(177, 177, 177);
 }
 .billon_:hover {
-  background-color: rgb(192, 209, 255);
 }
 .billon {
   background: none;
   border: none;
   cursor: pointer;
+}
+.billon:hover {
+  font-weight: bolder;
 }
 .store_ {
   height: 30px;
@@ -86,13 +90,14 @@
   cursor: pointer;
   box-shadow: 0px 2px 3px rgb(177, 177, 177);
 }
-.store_:hover {
-  background-color: rgb(192, 209, 255);
-}
+
 .store {
   background: none;
   border: none;
   cursor: pointer;
+}
+.store:hover {
+  font-weight: bolder;
 }
 .headerwidth {
   width: 100%;
@@ -110,12 +115,14 @@
   box-shadow: 0px 2px 3px rgb(177, 177, 177);
 }
 .noise_:hover {
-  background-color: rgb(192, 209, 255);
 }
 .noise {
   background: none;
   border: none;
   cursor: pointer;
+}
+.noise:hover {
+  font-weight: bolder;
 }
 .etc_ {
   height: 30px;
@@ -134,9 +141,10 @@
   cursor: pointer;
   border: none;
 }
-.etc_:hover {
-  background-color: rgb(192, 209, 255);
+.etc:hover {
+  font-weight: bolder;
 }
+
 .report_list {
   display: flex;
   flex-direction: column;
