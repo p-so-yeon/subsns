@@ -1,6 +1,7 @@
 import { AiTwotoneAlert } from "react-icons/ai";
 import "./report.css";
 import { initializeApp } from "firebase/app";
+import { useNavigate } from "react-router-dom";
 import { getFirestore } from "firebase/firestore";
 import {
   addDoc,
@@ -34,24 +35,17 @@ const Report = () => {
   const handleReport = (value) => {
     setSelectedReport(value);
   };
-
-  // // Initialize Cloud Firestore and get a reference to the service
-  // const db = getFirestore(app);
-  // const storage = getStorage(app);
-  // const auth = getAuth();
-  // const user = auth.currentUser;
-  // if (user) {
-  //   console.log(user.email);
-  // } else {
-  //   console.log("사용자 정보가 없습니다.");
-  // } const handleReport = () => {
-  // Firebase에 데이터 저장
+  const navigate = useNavigate();
   const user = auth.currentUser;
-  if (user) {
-    console.log(user.email);
-  } else {
-    console.log("사용자 정보가 없습니다.");
-  }
+  useEffect(() => {
+    if (user) {
+      console.log(user.email);
+    } else {
+      console.log("사용자 정보가 없습니다.");
+      navigate("/");
+    }
+  }, []);
+
   const onSubmit = async (event) => {
     event.preventDefault();
 

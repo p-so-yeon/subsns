@@ -20,7 +20,15 @@ import Nav2 from "./header2";
 import rabbit from "./image.png";
 import "./sns.css";
 import { getAuth } from "firebase/auth";
-const Sns = () => {
+import { useNavigate } from "react-router-dom";
+const Sns_1 = () => {
+  const navigate = useNavigate();
+  const nav_1 = () => {
+    navigate("./sns_1");
+  };
+  const nav_sooin = () => {
+    navigate("./sns_sooin");
+  };
   const [isLoading, setLoading] = useState(false);
   const [post, setpost] = useState("");
   const [file, setfile] = useState([]);
@@ -51,6 +59,8 @@ const Sns = () => {
     console.log(user.email);
   } else {
     console.log("사용자 정보가 없습니다.");
+
+    navigate("/");
   }
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -122,7 +132,7 @@ const Sns = () => {
                 <div className="profileimg">
                   <FaUser />
                 </div>
-                <div>{data.userId}</div>
+                <div>{data.useremail}</div>
               </div>{" "}
               <div className="divline"></div>
               <div className="posttime"> {data.createdAt.seconds}</div>{" "}
@@ -139,4 +149,4 @@ const Sns = () => {
     </div>
   );
 };
-export default Sns;
+export default Sns_1;

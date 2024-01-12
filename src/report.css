@@ -158,10 +158,10 @@
 .reportbtn {
   padding: 5px;
   cursor: pointer;
-  border-radius: 5px;
+  border: none;
 }
 .reportbtn:hover {
-  background: rgb(16, 147, 255);
+  font-weight: bolder;
 }
 .btnlay {
   width: 100%;

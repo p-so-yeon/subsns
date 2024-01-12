@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import { useNavigate } from "react-router-dom";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -15,7 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-
+import { FaTrainSubway } from "react-icons/fa6";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -55,6 +56,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -70,10 +72,12 @@ export default function SignUp() {
         // Signed in
         console.log(userCredential);
         const user = userCredential.user;
+        navigate("/sns_1", { replace: true });
         // ...
       })
       .catch((error) => {
         console.log(error);
+
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
@@ -93,9 +97,7 @@ export default function SignUp() {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <LockOutlinedIcon />
-            </Avatar>
+            <FaTrainSubway size="50px"></FaTrainSubway>
             <Typography component="h1" variant="h5">
               회원가입
             </Typography>
@@ -140,7 +142,7 @@ export default function SignUp() {
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href="./login" variant="body2">
                     이미 계정이 있으신가요?
                   </Link>
                 </Grid>

@@ -27,7 +27,7 @@ const Nav2 = () => {
 
   const navigate = useNavigate();
   const Movesns = () => {
-    navigate("/sns");
+    navigate("/sns_1");
   };
   const [isMenuVisible, setMenuVisible] = useState(false);
 

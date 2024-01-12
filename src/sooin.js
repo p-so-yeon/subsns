@@ -122,7 +122,7 @@ const Sns_sooin = () => {
                 <div className="profileimg">
                   <FaUser />
                 </div>
-                <div>{data.userId}</div>
+                <div>{data.useremail}</div>
               </div>{" "}
               <div className="divline"></div>
               <div className="posttime"> {data.createdAt.seconds}</div>{" "}

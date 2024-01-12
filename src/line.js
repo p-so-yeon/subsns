@@ -11,8 +11,8 @@ const Line = ({ selectedRoom, onSelectRoom }) => {
         >
           <option value={1}>1호선</option>
           <option value={2}>수인분당선</option>
-        </select>
-      </div>
+        </select>{" "}
+      </div>{" "}
     </div>
   );
 };
