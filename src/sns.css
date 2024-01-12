@@ -7,6 +7,7 @@
   scrollbar-width: none;
   resize: none;
   overflow: auto;
+  background: ;
   margin-left: 20px;
 }
 .postarea::placeholder {
@@ -15,12 +16,13 @@
 }
 
 .postbox {
+  background: white;
   display: flex;
   height: 35px;
-  margin-top: 10px;
+  margin-top: 15px;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 370px;
   border: solid gray;
   resize: both;
   border-radius: 60px;
@@ -53,7 +55,7 @@
 }
 .timelineinput {
   width: 395px;
-  margin-left: 20px;
+  margin-left: 25px;
   border-top: none;
   border-left: solid 2px rgb(160, 160, 160);
   border-right: none;
@@ -84,8 +86,12 @@
   margin-top: 20px;
 }
 .profileimg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 25px;
   width: 25px;
+  border: solid;
   border-radius: 50%;
 }
 .userinfo {
@@ -100,5 +106,6 @@
 .firstline {
   display: flex;
   height: 33px;
+  width: 90%;
   align-items: center;
 }

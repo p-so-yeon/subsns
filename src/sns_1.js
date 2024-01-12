@@ -11,11 +11,11 @@ import { getStorage, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { IoIosSend } from "react-icons/io";
 import { auth, db } from "./firebase";
-
+import { FaUser } from "react-icons/fa";
 import { format, formatDistanceToNow } from "date-fns";
 import { ko } from "date-fns/locale";
 import { FiLoader } from "react-icons/fi";
-import Line from "./line";
+import Line2 from "./line2";
 import Nav2 from "./header2";
 import rabbit from "./image.png";
 import "./sns.css";
@@ -94,9 +94,8 @@ const Sns = () => {
   }, []);
 
   return (
-    <div>
-      <Nav2></Nav2>
-      <Line></Line>
+    <div className="subsns">
+      <Line2></Line2>
       <form onSubmit={onSubmit} className="submit">
         {" "}
         <div className="postbox">
@@ -120,7 +119,9 @@ const Sns = () => {
           <div className="timelinebox">
             <div className="firstline">
               <div className="userinfo">
-                <img src={rabbit} className="profileimg"></img>
+                <div className="profileimg">
+                  <FaUser />
+                </div>
                 <div>{data.userId}</div>
               </div>{" "}
               <div className="divline"></div>

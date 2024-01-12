@@ -1,11 +1,17 @@
 import "./header.css";
-const Line = () => {
+import { FaPlusSquare } from "react-icons/fa";
+const Line = ({ selectedRoom, onSelectRoom }) => {
   return (
     <div>
       <div className="choose">
-        {" "}
-        <button className="line1">1호선</button>
-        <button className="sooin">수인분당선</button>
+        {/* select 엘리먼트로 수정 */}
+        <select
+          value={selectedRoom}
+          onChange={(e) => onSelectRoom(e.target.value)}
+        >
+          <option value={1}>1호선</option>
+          <option value={2}>수인분당선</option>
+        </select>
       </div>
     </div>
   );

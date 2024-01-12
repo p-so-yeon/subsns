@@ -5,15 +5,14 @@
 body {
   font-family: "Noto Sans KR";
   font-size: smaller;
-  width: auto;
-  display: flex;
-  height: 1000px; /* 높이를 1000px로 설정 */
+  width: 400px;
+  background-color: rgba(241, 241, 235, 0.735);
+  height: 844px; /* 높이를 1000px로 설정 */
   overflow-y: auto;
-  justify-content: center;
 }
 html {
   display: flex;
-  align-items: center;
+
   justify-content: center;
   height: 1000px;
 }

@@ -1,7 +1,9 @@
 import { IoMenu } from "react-icons/io5";
+import { FaPlusSquare } from "react-icons/fa";
 import "./header.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Line from "./line";
 const Nav2 = () => {
   const navigate = useNavigate();
   const Movesns = () => {
@@ -26,9 +28,7 @@ const Nav2 = () => {
             <button className="btn11" onClick={Movesns}>
               커뮤니티
             </button>
-            <button className="btn2" onClick={Movebill}>
-              실시간위치
-            </button>
+
             <button className="btn3" onClick={Movereport}>
               신고
             </button>
@@ -44,7 +44,7 @@ const Nav2 = () => {
             )}
           </button>
         </div>
-
+        <Line></Line>
         <div className="direction"></div>
       </div>
     </div>

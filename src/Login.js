@@ -15,6 +15,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Nav from "./header";
+import { FaTrainSubway } from "react-icons/fa6";
+import "./login.css";
 function Copyright(props) {
   return (
     <Typography
@@ -54,7 +56,7 @@ export default function SignIn() {
         // Signed in
         const user = userCredential.user;
         console.log("로그인성공");
-        navigate("/Main");
+        navigate("/sns_1");
         // ...
       })
       .catch((error) => {
@@ -75,7 +77,6 @@ export default function SignIn() {
 
   return (
     <div>
-      <Nav></Nav>
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -87,11 +88,9 @@ export default function SignIn() {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <LockOutlinedIcon />
-            </Avatar>
+            <FaTrainSubway size="50px" color="black" />
             <Typography component="h1" variant="h5">
-              Sign in
+              Login
             </Typography>
             <Box
               component="form"
@@ -119,27 +118,25 @@ export default function SignIn() {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
+              <div className="checkbutton">
+                <Button
+                  className="check"
+                  type="submit"
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
+                  확인
+                </Button>
+              </div>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
-                    Forgot password?
+                    비밀번호찾기
                   </Link>
                 </Grid>
                 <Grid item>
                   <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    {"계정이 없으신가요?"}
                   </Link>
                 </Grid>
               </Grid>
