@@ -23,12 +23,7 @@ import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 const Sns_1 = () => {
   const navigate = useNavigate();
-  const nav_1 = () => {
-    navigate("./sns_1");
-  };
-  const nav_sooin = () => {
-    navigate("./sns_sooin");
-  };
+
   const [isLoading, setLoading] = useState(false);
   const [post, setpost] = useState("");
   const [file, setfile] = useState([]);

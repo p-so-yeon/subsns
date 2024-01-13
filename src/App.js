@@ -3,13 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sns_1 from "./sns_1";
 import SignUp from "./Register";
 import SignIn from "./Login";
-import Main from "./main";
 import Timeline from "./timeline";
 import Report from "./report";
 import Nav2 from "./header2";
 import Memo from "./memo";
 import Line from "./line";
-import Header from "./header";
+
 import Sns_sooin from "./sooin";
 function App() {
   return (
@@ -21,7 +20,6 @@ function App() {
           <Route path="/" element={<SignIn />} />
           <Route path="register" element={<SignUp />} />
           <Route path="login" element={<SignIn />} />
-          <Route path="main" element={<Main />} />
           <Route path="sns_1" element={<Sns_1 />} />
           <Route path="sns_sooin" element={<Sns_sooin />} />
           <Route path="report" element={<Report />} />
